@@ -4,3 +4,6 @@
 .settings
 .project
 *.log
+bin/
+target/
+test-output/

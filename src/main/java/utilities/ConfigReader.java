@@ -19,6 +19,8 @@ public class ConfigReader {
 				throw new RuntimeException("config.properties not found in resources folder");
 			}
 			
+			properties.load(input);
+			
 		} catch (IOException e) {
 			throw new RuntimeException("Failed to load config.properties",e);
 		}

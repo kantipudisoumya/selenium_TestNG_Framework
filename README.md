@@ -4,7 +4,7 @@
 
 \## Overview
 
-This is a Selenium automation framework built using Java, TestNG, and Maven.  
+This is a Selenium automation framework built using Java, TestNG, and Maven.
 
 It follows Page Object Model (POM) and Page Factory design patterns.
 
@@ -28,7 +28,7 @@ It follows Page Object Model (POM) and Page Factory design patterns.
 
 \- Page Factory (@FindBy)
 
-\- Driver Factory pattern
+\- Browser Factory pattern
 
 \- TestNG XML-based execution
 

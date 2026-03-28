@@ -1,11 +1,11 @@
 package tests;
 
-import base.base;
+import base.Base;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PracticePage;
 
-public class Test_Table_Sort_Filter extends base {
+public class Test_Table_Sort_Filter extends Base {
    PracticePage practice;
 
    @Test

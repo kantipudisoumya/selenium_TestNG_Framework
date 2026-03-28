@@ -1,11 +1,11 @@
 package tests;
 
-import base.base;
+import base.Base;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PracticePage;
 
-public class Test_Table_NoData extends base {
+public class Test_Table_NoData extends Base {
    PracticePage practice;
 
    @Test

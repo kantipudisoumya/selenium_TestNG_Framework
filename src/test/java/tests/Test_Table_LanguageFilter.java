@@ -1,13 +1,13 @@
 package tests;
 
-import base.base;
+import base.Base;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PracticePage;
 
-public class Test_Table_LanguageFilter extends base {
+public class Test_Table_LanguageFilter extends Base {
    PracticePage practice;
 
    public boolean verify_All_Table_Language_Entries(String input, String language) {

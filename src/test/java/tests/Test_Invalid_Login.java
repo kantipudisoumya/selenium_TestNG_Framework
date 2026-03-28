@@ -1,12 +1,12 @@
 package tests;
 
-import base.base;
+import base.Base;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utilities.DataProviderUtils;
 
-public class Test_Invalid_Login extends base {
+public class Test_Invalid_Login extends Base {
    @Test(
       dataProvider = "invalid_login",
       dataProviderClass = DataProviderUtils.class

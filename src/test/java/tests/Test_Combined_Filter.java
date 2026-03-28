@@ -1,6 +1,6 @@
 package tests;
 
-import base.base;
+import base.Base;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PracticePage;
 
-public class Test_Combined_Filter extends base {
+public class Test_Combined_Filter extends Base {
    PracticePage practice;
 
    public void verify_Combined_Filter(String language, String level, String enrollments) throws InterruptedException {

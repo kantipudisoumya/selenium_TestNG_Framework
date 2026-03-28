@@ -1,13 +1,13 @@
 package tests;
 
-import base.base;
+import base.Base;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PracticePage;
 
-public class Test_Table_LevelFilter extends base {
+public class Test_Table_LevelFilter extends Base {
    PracticePage practice;
 
    @Test

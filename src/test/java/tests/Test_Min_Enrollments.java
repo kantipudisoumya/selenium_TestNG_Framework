@@ -1,13 +1,13 @@
 package tests;
 
-import base.base;
+import base.Base;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PracticePage;
 
-public class Test_Min_Enrollments extends base {
+public class Test_Min_Enrollments extends Base {
    PracticePage practice;
 
    public void verify_Min_Enrollments(int min_enrollments) {

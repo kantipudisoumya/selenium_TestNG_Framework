@@ -15,7 +15,6 @@ public class Base {
 	{
 		driver=BrowserFactory.initBrowser(browser);
 		driver.manage().window().maximize();
-		
 	}
 	
 	@AfterClass

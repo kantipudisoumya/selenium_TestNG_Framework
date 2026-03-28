@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Selenium Test Suite" parallel="false">
+   <test name="chrome">
+      <parameter name="browser" value="chrome"/>
+         <classes>
+            <class name="tests.Test_Invalid_Login"></class>
+            <class name="tests.Test_Valid_Login"></class>
+            <class name="tests.Test_Table_LevelFilter"></class>
+            <class name="tests.Test_Table_LanguageFilter"></class>
+            <class name="tests.Test_Min_Enrollments"></class>
+            <class name="tests.Test_Combined_Filter"></class>
+            <class name="tests.Test_Table_NoData"></class>
+            <class name="tests.Test_Reset_Button"></class>
+            <class name="tests.Test_Table_Sort_Filter"></class>
+
+        </classes>
+   </test>
+   
+   <test name="firefox">
+      <parameter name="browser" value="firefox"/>
+         <classes>
+            <class name="tests.Test_Invalid_Login"></class>
+            <class name="tests.Test_Valid_Login"></class>
+            <class name="tests.Test_Table_LevelFilter"></class>
+            <class name="tests.Test_Table_LanguageFilter"></class>
+            <class name="tests.Test_Min_Enrollments"></class>
+            <class name="tests.Test_Combined_Filter"></class>
+            <class name="tests.Test_Table_NoData"></class>
+            <class name="tests.Test_Reset_Button"></class>
+            <class name="tests.Test_Table_Sort_Filter"></class>
+
+        </classes>
+   </test>
+   
+   <test name="IE">
+      <parameter name="browser" value="edge"/>
+         <classes>
+            <class name="tests.Test_Invalid_Login"></class>
+            <class name="tests.Test_Valid_Login"></class>
+            <class name="tests.Test_Table_LevelFilter"></class>
+            <class name="tests.Test_Table_LanguageFilter"></class>
+            <class name="tests.Test_Min_Enrollments"></class>
+            <class name="tests.Test_Combined_Filter"></class>
+            <class name="tests.Test_Table_NoData"></class>
+            <class name="tests.Test_Reset_Button"></class>
+            <class name="tests.Test_Table_Sort_Filter"></class>
+
+        </classes>
+   </test>
+</suite>

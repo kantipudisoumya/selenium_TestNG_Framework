@@ -1,7 +1,6 @@
-
 *.jar
-target/
-bin/
 .classpath
+.metadata
+.settings
 .project
-.settings/
+*.log

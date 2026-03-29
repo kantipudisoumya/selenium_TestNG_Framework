@@ -7,8 +7,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ConfigReader;
 
 public class BrowserFactory {
@@ -20,7 +18,6 @@ public class BrowserFactory {
       }
          switch(browserType.toLowerCase()) {
          case "chrome":
-        	   WebDriverManager.chromedriver().setup();
         	   ChromeOptions options=new ChromeOptions();
         	   if(headless)
         	   {
@@ -33,7 +30,6 @@ public class BrowserFactory {
                driver=new ChromeDriver(options);
                break;
          case "firefox":
-        	   WebDriverManager.edgedriver().setup();
                FirefoxOptions options_ff=new FirefoxOptions();
                if(headless)
                {
@@ -44,7 +40,6 @@ public class BrowserFactory {
         	   driver=new FirefoxDriver(options_ff);
                break;
          case "edge":
-        	WebDriverManager.edgedriver().setup();
         	EdgeOptions options_edge=new EdgeOptions();
         	if(headless)
         	{

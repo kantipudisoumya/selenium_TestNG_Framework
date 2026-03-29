@@ -33,12 +33,13 @@ jobs:
 
       - name: Generate Allure Report
         if: always()
-        uses: simple-elf/allure-report-action@v1.7
+        uses: simple-elf/allure-report-action@v1.13
         with:
            allure_results: allure-results
            allure_report: allure-report
 
       - name: Upload Pages Artifact
+        if: always()
         uses: actions/upload-pages-artifact@v3
         with:
           path: allure-report

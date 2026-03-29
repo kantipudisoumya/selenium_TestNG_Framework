@@ -23,8 +23,8 @@ public class WaitUtils {
       return (WebElement)this.wait.until(ExpectedConditions.visibilityOf(element));
    }
    
-   public WebElement waitForVisibility(By xpath) {
-	      return (WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+   public WebElement waitForVisibility(By locator) {
+	      return (WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	   }
 
    public WebElement waitUntilClickable(WebElement element) {

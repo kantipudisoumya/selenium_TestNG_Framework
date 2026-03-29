@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import utilities.ConfigReader;
 import utilities.WaitUtils;
 
 public class PracticePage{
@@ -71,7 +73,7 @@ public class PracticePage{
    }
 
    public void navigate_To_Practice_Page() {
-      this.driver.get("https://practicetestautomation.com/practice/");
+      this.driver.get(ConfigReader.getProperty("baseUrl")+"/practice/");
    }
 
    public void navigate_To_Test_Table_Page() {

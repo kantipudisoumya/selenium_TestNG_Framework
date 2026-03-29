@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
+import utilities.ConfigReader;
+
 public class CoursesPage {
    WebDriver driver;
 
@@ -10,6 +12,6 @@ public class CoursesPage {
    }
 
    public void navigate_Courses_Page() {
-      this.driver.get("https://practicetestautomation.com/courses/");
+      this.driver.get(ConfigReader.getProperty("baseUrl")+"/courses/");
    }
 }

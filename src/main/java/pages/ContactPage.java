@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
+import utilities.ConfigReader;
+
 
 public class ContactPage{
 	WebDriver driver;
@@ -11,6 +13,6 @@ public class ContactPage{
 		this.driver=driver;
 	}
 	public void navigate_Contact_Page() {
-      this.driver.get("https://practicetestautomation.com/contact/");
+      this.driver.get(ConfigReader.getProperty("baseUrl")+"/contact");
    }
 }

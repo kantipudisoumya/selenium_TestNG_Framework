@@ -3,6 +3,7 @@ package pages;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,8 +23,10 @@ public class PracticePage{
    WebElement test_Login_Link;
    @FindBy(
       xpath = "//a[contains(@href,'practice-test-exceptions')]"
+      
    )
    WebElement test_Exceptions_Link;
+   
    @FindBy(
       xpath = "//a[contains(@href,'practice-test-table')]"
    )
@@ -32,6 +35,7 @@ public class PracticePage{
       xpath = "//input[@name='lang']"
    )
    List<WebElement> lang_option;
+   
    @FindBy(
       name = "level"
    )
@@ -40,6 +44,7 @@ public class PracticePage{
       xpath = "//table[@id='courses_table']/tbody/tr[not(@style='display: none;')]"
    )
    List<WebElement> table_rows;
+   
    @FindBy(
       id = "sortBy"
    )
@@ -60,10 +65,19 @@ public class PracticePage{
       id = "noData"
    )
    WebElement noData;
+   
+   @FindBy(id = "add_btn")
+   WebElement add_btn_exceptions;
+   
+   @FindBy(id = "row2")
+   WebElement row2_exceptions;
+   
    @FindBy(
       id = "resetFilters"
    )
    WebElement reset_button;
+ 
+   
 
    public PracticePage(WebDriver driver) {
       this.driver = driver;
@@ -88,8 +102,9 @@ public class PracticePage{
 
    public void navigate_To_Test_Exceptions_Page() {
       this.navigate_To_Practice_Page();
-      this.test_Table_Link.click();
+      this.test_Exceptions_Link.click();
    }
+   
 
    public WebElement select_Language_Option(String language) {
       List<WebElement> list = this.lang_option;
@@ -226,7 +241,6 @@ public class PracticePage{
    }
 
    public String get_noData_Error() {
-	   wait.waitForVisibility(noData);
        return this.noData.getText();
    }
 
@@ -243,4 +257,19 @@ public class PracticePage{
    public boolean is_get_noData_Error_Displayed() {
       return this.noData.isDisplayed();
    }
+   
+      public void add_Row() {
+    	  WebElement element=add_btn_exceptions;
+    	  System.out.println(element.getText());
+    	  element.click();
+    }
+      
+      public boolean is_row2_Displayed()
+      {
+    	  
+    	      WebElement element_found;
+    		  By element=By.xpath("//div[@id='row2']/input[@type='text']");
+    		  element_found=wait.waitForVisibility(element);
+    		  return element_found.isDisplayed();
+      }
 }

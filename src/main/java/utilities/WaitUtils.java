@@ -1,23 +1,31 @@
 package utilities;
 
 import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 public class WaitUtils {
    protected WebDriver driver;
-   private WebDriverWait wait;
+   private Wait<WebDriver> wait;
 
+   //Using Fluent Wait
    public WaitUtils(WebDriver driver) {
       this.driver = driver;
-      this.wait = new WebDriverWait(driver, Duration.ofSeconds(10L));
+      this.wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(5));
    }
 
    public WebElement waitForVisibility(WebElement element) {
       return (WebElement)this.wait.until(ExpectedConditions.visibilityOf(element));
    }
+   
+   public WebElement waitForVisibility(By xpath) {
+	      return (WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+	   }
 
    public WebElement waitUntilClickable(WebElement element) {
       return (WebElement)this.wait.until(ExpectedConditions.elementToBeClickable(element));

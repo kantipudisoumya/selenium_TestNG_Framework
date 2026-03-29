@@ -20,6 +20,8 @@ It follows Page Object Model (POM) and Page Factory design patterns.
 
 \- Maven
 
+\- Allure
+
 
 
 \## Framework Design
@@ -31,6 +33,10 @@ It follows Page Object Model (POM) and Page Factory design patterns.
 \- Browser Factory pattern
 
 \- TestNG XML-based execution
+
+\- Allure Reports
+
+
 
 
 
@@ -54,7 +60,7 @@ src/
 
 \## How to Run
 
-Run via testng.xml
+Run via testng.xml or mvn using surefire
 
 
 

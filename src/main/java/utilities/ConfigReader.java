@@ -28,12 +28,17 @@ public class ConfigReader {
 	
 	public static String getProperty(String key)
 	{
-		String value=properties.getProperty(key);
-		if(value==null)
-		{
-			throw new RuntimeException("Property not found: "+key);
-		}
-		return value;
+	        String envValue = System.getenv(key.toUpperCase());
+	        if (envValue != null && !envValue.trim().isEmpty()) 
+	        {
+	            return envValue;
+	        }
+		   String value=properties.getProperty(key);
+		   if(value==null)
+		   {
+			  throw new RuntimeException("Property not found: "+key);
+		   }
+		  return value;
 	}
 
 }

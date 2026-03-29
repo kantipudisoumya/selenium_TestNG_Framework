@@ -24,6 +24,8 @@ jobs:
 
       - name: Run tests
         run: mvn -B clean test
+      - env: 
+        HEADLESS: true
 
       - name: Upload TestNG reports
         if: always()

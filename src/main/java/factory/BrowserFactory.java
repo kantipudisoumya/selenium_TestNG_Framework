@@ -12,8 +12,7 @@ import utilities.ConfigReader;
 
 public class BrowserFactory {
    public static WebDriver initBrowser(String browserType) {
-	  
-	  
+	  boolean headless=Boolean.valueOf(ConfigReader.getProperty("headless"));
 	  WebDriver driver=null;
       if (browserType == null || browserType.trim().isEmpty()) {
     	  browserType=ConfigReader.getProperty("defaultBrowser");
@@ -21,35 +20,47 @@ public class BrowserFactory {
          switch(browserType.toLowerCase()) {
          case "chrome":
         	   ChromeOptions options=new ChromeOptions();
+        	   if(headless)
+        	   {
         	   options.addArguments("--headless=new");
         	   options.addArguments("--no-sandbox");
         	   options.addArguments("--disable-dev-shm-usage");
         	   options.addArguments("--disable-gpu");
         	   options.addArguments("--window-size=1920,1080");
+        	   }
                driver=new ChromeDriver(options);
                break;
          case "firefox":
                FirefoxOptions options_ff=new FirefoxOptions();
+               if(headless)
+               {
         	   options_ff.addArguments("--headless=new");
         	   options_ff.addArguments("--width=1920");
         	   options_ff.addArguments("--height=1080");
+               }
         	   driver=new FirefoxDriver(options_ff);
                break;
          case "edge":
         	EdgeOptions options_edge=new EdgeOptions();
+        	if(headless)
+        	{
         	options_edge.addArguments("--headless=new");
      	    options_edge.addArguments("--no-sandbox");
      	    options_edge.addArguments("--disable-dev-shm-usage");
      	    options_edge.addArguments("--window-size=1920,1080");
+        	}
             driver=new EdgeDriver(options_edge);
             break;
          case "default":
         	 ChromeOptions options_c=new ChromeOptions();
+        	 if(headless)
+        	 {
       	     options_c.addArguments("--headless=new");
       	     options_c.addArguments("--no-sandbox");
       	     options_c.addArguments("--disable-dev-shm-usage");
       	     options_c.addArguments("--disable-gpu");
       	     options_c.addArguments("--window-size=1920,1080");
+        	 }
              driver=new ChromeDriver(options_c);
              break;
          }

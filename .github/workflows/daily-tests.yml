@@ -24,7 +24,7 @@ jobs:
 
       - name: Run tests
         run: mvn -B clean test
-      - env: 
+        env: 
             HEADLESS: true
 
       - name: Upload TestNG reports

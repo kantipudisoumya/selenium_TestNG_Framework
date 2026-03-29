@@ -1,23 +1,17 @@
-# .github/workflows/daily-tests.yml
 name: Daily Selenium Tests
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 2 * * *'   # daily at 02:30 UTC
-      # timezone: "Asia/Kolkata"   # optional if your GitHub Actions supports timezone
+    - cron: '30 2 * * *'
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
-  test-and-build-report:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,12 +27,13 @@ jobs:
 
       - name: Run tests
         run: mvn -B clean test
-        env: 
-            HEADLESS: true
+        env:
+          HEADLESS: true
 
       - name: Install Allure
         if: always()
         run: |
+          sudo apt-get update
           sudo apt-get install -y unzip
           curl -o allure.zip -L https://github.com/allure-framework/allure2/releases/latest/download/allure-2.29.0.zip
           unzip allure.zip
@@ -50,32 +45,22 @@ jobs:
         run: |
           allure generate allure-results --clean -o allure-report
           touch allure-report/.nojekyll
-  
-      - name: Upload Allure Pages artifact
+
+      - name: Upload Pages Artifact
         if: always()
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: allure-report
           path: allure-report
 
-      - name: Upload TestNG reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: testng-report
-          path: |
-            test-output/**
-            target/surefire-reports/**
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
 
-deploy:
-  if: github.ref == 'refs/heads/main'
-  needs: test-and-build-report
-  runs-on: ubuntu-latest
-  environment: 
-     name: github-pages
-     url:${{steps.deployment.outputs.page_url}}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-  steps:
-     -name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

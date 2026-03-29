@@ -68,11 +68,13 @@ Run via testng.xml or mvn using surefire
 
 Features:
 
-Cross-browser execution (Chrome, Firefox)
+Cross-browser execution (Chrome, Firefox, Internet Explorer)
 
 Parameterized execution using TestNG
 
 Clean driver initialization using Factory pattern
 
 Reusable page objects
+
+Framework is set up to run in headless mode remotely in CI environments and in GUI mode locally
 

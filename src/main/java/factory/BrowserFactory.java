@@ -10,9 +10,13 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import utilities.ConfigReader;
 
 public class BrowserFactory {
+	private static WebDriver driver;
+	
+	
+	
+	
    public static WebDriver initBrowser(String browserType) {
 	  boolean headless=Boolean.valueOf(ConfigReader.getProperty("headless"));
-	  WebDriver driver=null;
       if (browserType == null || browserType.trim().isEmpty()) {
     	  browserType=ConfigReader.getProperty("defaultBrowser");
       }
@@ -64,5 +68,10 @@ public class BrowserFactory {
              break;
          }
       return driver;
+   }
+   
+   public static WebDriver getDriver()
+   {
+	   return driver;
    }
 }

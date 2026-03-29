@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Selenium Test Suite" parallel="false">
+<listeners>
+   <listener class-name="listeners.AllureListener"></listener>
+</listeners>
    <test name="chrome">
       <parameter name="browser" value="chrome"/>
          <classes>

@@ -224,7 +224,8 @@ public class PracticePage{
    }
 
    public String get_noData_Error() {
-      return this.noData.getText();
+	   wait.waitForVisibility(noData);
+       return this.noData.getText();
    }
 
    public void select_sort_dropDown(String option) {

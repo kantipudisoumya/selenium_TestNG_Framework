@@ -15,7 +15,7 @@
             <class name="tests.Test_Table_NoData"></class>
             <class name="tests.Test_Reset_Button"></class>
             <class name="tests.Test_Table_Sort_Filter"></class>
-            <class name="tests.Test_Exceptions_NoSuchElement"></class>
+            <class name="tests.Test_Exceptions"></class>
 
         </classes>
    </test>
@@ -32,7 +32,7 @@
             <class name="tests.Test_Table_NoData"></class>
             <class name="tests.Test_Reset_Button"></class>
             <class name="tests.Test_Table_Sort_Filter"></class>
-            <class name="tests.Test_Exceptions_NoSuchElement"></class>
+            <class name="tests.Test_Exceptions"></class>
 
         </classes>
    </test>
@@ -49,7 +49,7 @@
             <class name="tests.Test_Table_NoData"></class>
             <class name="tests.Test_Reset_Button"></class>
             <class name="tests.Test_Table_Sort_Filter"></class>
-            <class name="tests.Test_Exceptions_NoSuchElement"></class>
+            <class name="tests.Test_Exceptions"></class>
 
         </classes>
    </test>

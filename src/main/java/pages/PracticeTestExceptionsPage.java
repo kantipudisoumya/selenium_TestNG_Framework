@@ -16,6 +16,10 @@ public class PracticeTestExceptionsPage {
 
 	   @FindBy(id = "add_btn")
 	   WebElement add_btn_exceptions;
+	   
+	   @FindBy(id="confirmation")
+	   WebElement save_confirmation;
+	   
 	
 	   private By getRowInputField(int rowNumber)
 	   {
@@ -32,19 +36,11 @@ public class PracticeTestExceptionsPage {
 		   return driver.findElement(By.xpath("//div[@id='row"+rowNumber+"']/button[@name='Save']"));
 	   }
 	   
-	   private WebElement getRowSaveConfirmation(int rowNumber)
+	   public boolean isRowSaveSuccessful(int rowNumber) throws InterruptedException
 	   {
-		   wait.waitForVisibility(By.xpath("//div[@id='confirmation' and text()='Row "+rowNumber+" was saved' and not(contains(@style,'display: none;'))]"));
-		   WebElement element = driver.findElement(By.xpath("//div[@id='confirmation' and text()='Row "+rowNumber+" was saved' and not(contains(@style,'display: none;'))]"));
-	       System.out.println(element.getText());
-		   return element;
+		   WebElement element=wait.waitForVisibility(save_confirmation);
+		   return element.getText().trim().equals("Row "+rowNumber+" was saved");
 	   }
-	   
-	   public boolean isRowSaveSuccessful(int rowNumber)
-	   {
-		   return getRowSaveConfirmation(rowNumber).isDisplayed();
-	   }
-	   
 	   
 	   public PracticeTestExceptionsPage(WebDriver driver)
 	   {

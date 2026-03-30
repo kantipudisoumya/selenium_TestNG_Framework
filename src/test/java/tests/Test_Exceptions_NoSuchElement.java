@@ -20,7 +20,7 @@ public class Test_Exceptions_NoSuchElement extends Base{
 	}
 	
 	@Test
-	public void test_save_row2()
+	public void test_save_row2() throws InterruptedException
 	{
 		practice=new PracticeTestExceptionsPage(driver);
 		practice.navigate_To_Test_Exceptions_Page();
@@ -30,7 +30,7 @@ public class Test_Exceptions_NoSuchElement extends Base{
 	}
 	
 	@Test
-	public void test_Invalid_Element_StateException()
+	public void test_Invalid_Element_StateException() throws InterruptedException
 	{
 		practice = new PracticeTestExceptionsPage(driver);
 		practice.navigate_To_Test_Exceptions_Page();

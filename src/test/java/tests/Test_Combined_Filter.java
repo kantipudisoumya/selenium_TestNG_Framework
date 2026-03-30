@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PracticePage;
+import pages.PracticeTestTablePage;
 
 public class Test_Combined_Filter extends Base {
-   PracticePage practice;
+   PracticeTestTablePage practice;
 
    public void verify_Combined_Filter(String language, String level, String enrollments) throws InterruptedException {
       HashMap<Integer, List<String>>map = new HashMap<Integer, List<String>>();
@@ -28,7 +28,7 @@ public class Test_Combined_Filter extends Base {
    @Test
    public void test_Combined_Filter() throws InterruptedException 
    {
-      practice = new PracticePage(this.driver);
+      practice = new PracticeTestTablePage(this.driver);
       practice.navigate_To_Test_Table_Page();
       practice.select_Language_Option("Python");
       practice.unselect_All_Level_CheckBoxes();

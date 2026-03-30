@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import base.Base;
 import pages.PracticeTestExceptionsPage;
 
-public class Test_Exceptions_NoSuchElement extends Base{
+public class Test_Exceptions extends Base{
 
 	PracticeTestExceptionsPage practice;
 	
@@ -48,4 +48,5 @@ public class Test_Exceptions_NoSuchElement extends Base{
     	practice.is_row_Displayed(2);
     	Assert.assertFalse(practice.is_Instructions_Displayed());
     }
+	
 }

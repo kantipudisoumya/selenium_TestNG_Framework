@@ -5,14 +5,14 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PracticePage;
+import pages.PracticeTestTablePage;
 
 public class Test_Table_LevelFilter extends Base {
-   PracticePage practice;
+   PracticeTestTablePage practice;
 
    @Test
    public void test_Table_Filter() {
-      this.practice = new PracticePage(this.driver);
+      this.practice = new PracticeTestTablePage(this.driver);
       this.practice.navigate_To_Test_Table_Page();
       this.practice.unselect_All_Level_CheckBoxes();
       this.practice.select_Level_CheckBox("Beginner");

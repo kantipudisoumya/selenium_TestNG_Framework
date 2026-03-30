@@ -5,10 +5,10 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PracticePage;
+import pages.PracticeTestTablePage;
 
 public class Test_Min_Enrollments extends Base {
-   PracticePage practice;
+   PracticeTestTablePage practice;
 
    public void verify_Min_Enrollments(int min_enrollments) {
       List<WebElement> list = this.practice.get_All_Table_Column_Entries("enrollments");
@@ -23,7 +23,7 @@ public class Test_Min_Enrollments extends Base {
 
    @Test
    public void test_Min_Enrollments() throws InterruptedException {
-      this.practice = new PracticePage(this.driver);
+      this.practice = new PracticeTestTablePage(this.driver);
       this.practice.navigate_To_Test_Table_Page();
       String enroll_str = this.practice.select_Min_Enrollments("10000");
       int enrollments = Integer.valueOf(enroll_str);

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import utilities.ConfigReader;
 import utilities.WaitUtils;
 
-public class PracticePage{
+public class PracticeTestTablePage{
    WebDriver driver;
    WaitUtils wait;
    @FindBy(
@@ -72,7 +72,7 @@ public class PracticePage{
    WebElement reset_button;
   
 
-   public PracticePage(WebDriver driver) {
+   public PracticeTestTablePage(WebDriver driver) {
       this.driver = driver;
       PageFactory.initElements(driver, this);
       wait = new WaitUtils(driver);

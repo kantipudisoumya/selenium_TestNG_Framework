@@ -11,6 +11,10 @@ public class ScreenshotUtil{
 	public static byte[] capture()
 	{
 		WebDriver driver=BrowserFactory.getDriver();
+		if(driver==null)
+		{
+			return new byte[0];
+		}
 		return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 	}
 

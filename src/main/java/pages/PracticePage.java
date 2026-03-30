@@ -66,24 +66,16 @@ public class PracticePage{
    )
    WebElement noData;
    
-   @FindBy(id = "add_btn")
-   WebElement add_btn_exceptions;
-   
-   @FindBy(id = "row2")
-   WebElement row2_exceptions;
-   
    @FindBy(
       id = "resetFilters"
    )
    WebElement reset_button;
- 
-   
+  
 
    public PracticePage(WebDriver driver) {
       this.driver = driver;
       PageFactory.initElements(driver, this);
-      WaitUtils wait = new WaitUtils(driver);
-      this.wait = wait;
+      wait = new WaitUtils(driver);
    }
 
    public void navigate_To_Practice_Page() {
@@ -257,19 +249,5 @@ public class PracticePage{
    public boolean is_get_noData_Error_Displayed() {
       return this.noData.isDisplayed();
    }
-   
-      public void add_Row() {
-    	  WebElement element=add_btn_exceptions;
-    	  System.out.println(element.getText());
-    	  element.click();
-    }
       
-      public boolean is_row2_Displayed()
-      {
-    	  
-    	      WebElement element_found;
-    		  By element=By.xpath("//div[@id='row2']/input[@type='text']");
-    		  element_found=wait.waitForVisibility(element);
-    		  return element_found.isDisplayed();
-      }
 }

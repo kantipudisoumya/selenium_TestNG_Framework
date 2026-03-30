@@ -37,4 +37,15 @@ public class Test_Exceptions_NoSuchElement extends Base{
 		practice.set_Text_And_Save("Donut", 1);
 		Assert.assertTrue(practice.isRowSaveSuccessful(1));
 	}
+	
+	@Test
+	public void test_Instructions_Display()
+	{
+    	practice = new PracticeTestExceptionsPage(driver);
+    	practice.navigate_To_Test_Exceptions_Page();
+    	Assert.assertTrue(practice.is_Instructions_Displayed());
+    	practice.add_Row();
+    	practice.is_row_Displayed(2);
+    	Assert.assertFalse(practice.is_Instructions_Displayed());
+    }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.NoSuchElementException;
 
 import utilities.ConfigReader;
 import utilities.WaitUtils;
@@ -19,6 +20,9 @@ public class PracticeTestExceptionsPage {
 	   
 	   @FindBy(id="confirmation")
 	   WebElement save_confirmation;
+	   
+	   @FindBy(id="instructions")
+	   WebElement instructions;
 	   
 	
 	   private By getRowInputField(int rowNumber)
@@ -79,5 +83,16 @@ public class PracticeTestExceptionsPage {
   		  driver.findElement(getRowInputField(rowNumber)).sendKeys(text);
   		     getRowSaveButton(rowNumber).click();
   	  }
+    }
+    
+    public boolean is_Instructions_Displayed()
+    {
+    	try {
+    	return instructions.isDisplayed();
+    	}
+    	catch (NoSuchElementException e)
+        {
+    		return false;
+    	}
     }
 }

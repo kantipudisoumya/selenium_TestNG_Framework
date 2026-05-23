@@ -236,7 +236,8 @@ public class PracticeTestTablePage{
        return this.noData.getText();
    }
 
-   public void select_sort_dropDown(String option) {
+   public void select_sort_dropDown(String option) {   
+	  wait.waitForVisibility(this.sort_dropDown);
       Select sort_drop_Down = new Select(this.sort_dropDown);
       sort_drop_Down.selectByVisibleText(option);
    }
